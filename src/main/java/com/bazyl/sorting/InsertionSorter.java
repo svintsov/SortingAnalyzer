@@ -5,7 +5,6 @@ import java.util.Comparator;
 
 @Sorter
 public class InsertionSorter<T> extends AbstractSorter<T> {
-  // Constructor omitted.
 
   public InsertionSorter(Comparator<T> comparator) {
     super(comparator);

@@ -11,18 +11,18 @@ public abstract class AbstractSorter<T> {
     this.comparator = comparator;
   }
 
-  public final void sort(T[] array, int lo, int hi){
-    if(lo<hi){
-      int s = split(array,lo,hi);
-      sort(array,lo,hi-1);
-      sort(array,s,hi);
-      join(array,lo,s,hi);
+  public final void sort(T[] array, int lowerBoundary, int upperBoundary){
+    if(lowerBoundary<upperBoundary){
+      int s = split(array,lowerBoundary,upperBoundary);
+      sort(array,lowerBoundary,upperBoundary-1);
+      sort(array,s,upperBoundary);
+      join(array,lowerBoundary,s,upperBoundary);
     }
   }
 
-  protected abstract int split(T[] array, int lo, int hi);
+  protected abstract int split(T[] array, int lowerBoundary, int upperBoundary);
 
-  protected abstract void join(T[] array, int lo, int s, int hi);
+  protected abstract void join(T[] array, int lowerBoundary, int splitBoundary, int upperBoundary);
 
   public void setAOrder(Comparator<T> comparator) {
     this.comparator = comparator;
