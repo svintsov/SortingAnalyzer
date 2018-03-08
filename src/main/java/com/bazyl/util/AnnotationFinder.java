@@ -4,6 +4,8 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import org.reflections.Reflections;
 
 public class AnnotationFinder {
 
@@ -19,5 +21,11 @@ public class AnnotationFinder {
       }
     }
     return annotatedMethods;
+  }
+
+  public static Set<Class<?>> findAnnotatedClasses(Class<? extends Annotation> annotationClass){
+    Reflections reflections = new Reflections("com.bazyl");
+
+    return reflections.getTypesAnnotatedWith(annotationClass);
   }
 }
