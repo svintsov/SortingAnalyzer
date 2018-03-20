@@ -20,9 +20,11 @@ public class InsertionSorter<T> extends AbstractSorter<T> {
     // Post: array[lowerBoundary:upperBoundary] is sorted.
     int j;
     T key = array[upperBoundary];
+
     for (j = upperBoundary; lowerBoundary < j && comparator.compare(key, array[j - 1]) < 0; j--) {
       array[j] = array[j - 1];
     }
+
     array[j] = key;
   }
 }
