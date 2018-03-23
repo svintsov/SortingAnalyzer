@@ -1,7 +1,9 @@
 package com.bazyl.sorting;
 
+import com.bazyl.util.Sorter;
 import java.util.Comparator;
 
+@Sorter
 public class QuickSorter<T> extends AbstractSorter<T> {
 
   public QuickSorter(final Comparator<T> comparator) {

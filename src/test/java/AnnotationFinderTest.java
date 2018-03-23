@@ -37,4 +37,26 @@ public class AnnotationFinderTest {
 
     assertThat(types.size(), is(SORTER_COUNTER));
   }
+
+  @Test
+  public void testAnnotationTypesNames() {
+
+    Set<Class<?>> types = AnnotationFinder
+        .findAnnotatedClasses(Sorter.class);
+
+    for(Class<?> type :types){
+      System.out.println(type.getSimpleName());
+    }
+  }
+
+  @Test
+  public void testAnnotationMethodsNames() {
+
+    List<Method> methods = AnnotationFinder
+        .findAnnotatedMethods(ArrayGenerator.class, Filler.class);
+
+    for(Method method:methods){
+      System.out.println(method.getName().replaceFirst("generate",""));
+    }
+  }
 }
