@@ -11,12 +11,19 @@ public abstract class AbstractSorter<T> {
     this.comparator = comparator;
   }
 
-  public final void sort(T[] array, int lowerBoundary, int upperBoundary){
-    if(lowerBoundary<upperBoundary){
-      int s = split(array,lowerBoundary,upperBoundary);
-      sort(array,lowerBoundary,upperBoundary-1);
-      sort(array,s,upperBoundary);
-      join(array,lowerBoundary,s,upperBoundary);
+  protected AbstractSorter() {
+  }
+
+  public final void sort(T[] array, int lowerBoundary, int upperBoundary) {
+    if (lowerBoundary < upperBoundary) {
+
+      int s = split(array, lowerBoundary, upperBoundary);
+
+      sort(array, lowerBoundary, upperBoundary - 1);
+      sort(array, s, upperBoundary);
+
+      join(array, lowerBoundary, s, upperBoundary);
+
     }
   }
 
