@@ -3,6 +3,14 @@ package com.bazyl.sorting;
 import com.bazyl.util.Sorter;
 import java.util.Comparator;
 
+/**
+ * Implementation of Insertion sorting algorithm.
+ * @see <a href = "https://en.wikipedia.org/wiki/Insertion_sort">link</a>
+ * @author svintsov
+ *
+ * @param <T>
+ */
+
 @Sorter
 public class InsertionSorter<T> extends AbstractSorter<T> {
 

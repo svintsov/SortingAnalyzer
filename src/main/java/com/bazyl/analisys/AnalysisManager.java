@@ -15,12 +15,28 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+
+/**
+ * Main class for collecting and analysing the time of execution of sorting algorithms
+ *
+ * @author svintsov
+ */
 public class AnalysisManager {
 
   private final int ARRAY_LENGTH = 1000;
 
   private Map<String, Map<String, Integer>> timeBook;
 
+
+  /**
+   * access to the collection of data
+   *
+   * @return instance of map with fulfilled time data
+   * @throws InvocationTargetException
+   * @throws NoSuchMethodException
+   * @throws InstantiationException
+   * @throws IllegalAccessException
+   */
   public Map<String, Map<String, Integer>> getTimeBook()
       throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 
@@ -29,6 +45,14 @@ public class AnalysisManager {
     return timeBook;
   }
 
+  /**
+   * outer method that collects and measures time data for sorting algorithms
+   *
+   * @throws NoSuchMethodException
+   * @throws InstantiationException
+   * @throws IllegalAccessException
+   * @throws InvocationTargetException
+   */
   private void collectDataForTimeBook()
       throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
 
@@ -48,6 +72,15 @@ public class AnalysisManager {
     }
   }
 
+  /**
+   * inner method that collects and measures time data for sorting algorithms.
+   * @param type      specific Class with Sorter annotation
+   * @param methods   list of methods with Filler annotation
+   * @throws InvocationTargetException
+   * @throws IllegalAccessException
+   * @throws NoSuchMethodException
+   * @throws InstantiationException
+   */
   private void runThroughFillerMethods(Class<?> type, List<Method> methods)
       throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
 

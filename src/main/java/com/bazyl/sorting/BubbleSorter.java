@@ -3,6 +3,13 @@ package com.bazyl.sorting;
 import com.bazyl.util.Sorter;
 import java.util.Comparator;
 
+/**
+ * Implementation of Bubble sorting algorithm.
+ * @see <a href = "https://en.wikipedia.org/wiki/Bubble_sort">link</a>
+ * @author svintsov
+ *
+ * @param <T>
+ */
 @Sorter
 public class BubbleSorter<T> extends AbstractSorter<T> {
 
