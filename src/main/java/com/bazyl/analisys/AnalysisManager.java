@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -38,11 +38,11 @@ public class AnalysisManager {
     final List<Method> methods = AnnotationFinder
         .findAnnotatedMethods(ArrayGenerator.class, Filler.class);
 
-    timeBook = new HashMap<>();
+    timeBook = new LinkedHashMap<>();
 
     for (Class<?> type : types) {
 
-      timeBook.put(type.getSimpleName(), new HashMap<>());
+      timeBook.put(type.getSimpleName(), new LinkedHashMap<>());
       runThroughFillerMethods(type, methods);
 
     }
