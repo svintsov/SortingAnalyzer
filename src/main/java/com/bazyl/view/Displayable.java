@@ -1,7 +1,9 @@
 package com.bazyl.view;
 
-public interface Displayable<T> {
+import java.util.Map;
 
-  void display(T[] array,String algorithm);
+public interface Displayable {
+
+  void display(Map<String,Map<String,Integer>> book);
 
 }
